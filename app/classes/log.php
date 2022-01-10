@@ -2,8 +2,6 @@
 
 namespace app\logs;
 
-use app\logs\Log as LogsLog;
-
 class Log 
 {
 
