@@ -1,0 +1,61 @@
+<?php
+
+namespace app\logs;
+
+use LogInterface;
+
+class ParentLog implements LogInterface
+{
+	private $logNotice;
+	private $logWarning;
+	private $logDangerous;
+
+	public function __construct($logNotice, $logWarning, $logDangerous)
+	{
+		$this->logNotice = $logNotice;
+		$this->logWarning = $logWarning;
+		$this->logDangerous = $logDangerous;
+	}
+
+	public function setLogNotice($value)
+	{
+		$log = Log::setPathByClass(__CLASS__);
+		$log->log('Change log class Notice. Context - "' . $value . '"');
+		$this->logNotice = $value;
+	}
+
+	public function getLogNotice()
+	{
+		$log = Log::setPathByMethod(__METHOD__);
+		$log->log('Show method Notice.');
+		return $this->logNotice;
+	}
+
+	public function setLogWarning($value)
+	{
+		$log = Log::setPathByClass(__CLASS__);
+		$log->log('Change log class Warning. Context -  "' . $value . '"');
+		$this->logWarning = $value;
+	}
+
+	public function getLogWarning()
+	{
+		$log = Log::setPathByMethod(__METHOD__);
+		$log->log('Show method Warning.');
+		return $this->logWarning;
+	}
+
+	public function setLogDangerous($value)
+	{
+		$log = Log::setPathByClass(__CLASS__);
+		$log->log('Change log class Dangerous. Context -  "' . $value . '"');
+		$this->logDangerous = $value;
+	}
+
+	public function getLogDangerous()
+	{
+		$log = Log::setPathByMethod(__METHOD__);
+		$log->log('Show method Dangerous.');
+		return $this->logDangerous;
+	}
+}
