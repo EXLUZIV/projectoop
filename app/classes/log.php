@@ -70,7 +70,7 @@ class Log
 		public function logJSON($text)
 		{
 			$file = fopen($this->pathLog, 'a+');
-			$message = '{' . PHP_EOL . '	"date":"'  . date('T.m.d') . '",' . PHP_EOL . '	"time":"' . date('h:i:s') . '",' . PHP_EOL . '	"context":"' . $text . '"' . PHP_EOL . '},' . PHP_EOL; 
+			$message = '{' . PHP_EOL . '	"date":"'  . date('T.m.d') . '",' . PHP_EOL . '	"time":"' . date('h:i:s') . '",' . PHP_EOL . '	"context":"' . $text . '},' . PHP_EOL; 
 			fwrite($file, $message);
 			fclose($file);
 		}
