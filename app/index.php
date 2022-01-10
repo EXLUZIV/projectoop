@@ -15,11 +15,11 @@ interface LogInterface
 
 \app\logs\Log::setRootLogDir('./logs'); 
 
-$log = new \app\logs\Log('/test.log');
-$log->log('Test log');
+// $log = new \app\logs\Log('/test.log');
+// $log->log('Test log');
 
-$log1 = new \app\logs\Log('\/\/\/bugtest\\\//bug.log///');
-$log1->log('test 4');
+// $log1 = new \app\logs\Log('\/\/\/bugtest\\\//bug.log///');
+// $log1->log('test 4');
 
 
 $FirstLog = new \app\logs\ParentLog('notice log', 'warning log', 'dangerous log');

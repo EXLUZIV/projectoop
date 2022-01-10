@@ -48,10 +48,29 @@ class Log
 			return new Log($path_method . '.log');
 		}
 
+		public static function setPathByClassJSON($path_class)
+		{
+			return new Log($path_class . '.json');
+		}
+
+		public static function setPathByMethodJSON($path_method)
+		{
+			$path_method = str_replace('::', '/' , $path_method);
+			return new Log($path_method . '.json');
+		}
+
 		public function log($text)
 		{
 			$file = fopen($this->pathLog, 'a+');
 			$message = self::NEW_LOG_MESSAGE . PHP_EOL . date('Y.m.d h:i:s') . PHP_EOL . $text . PHP_EOL . PHP_EOL;
+			fwrite($file, $message);
+			fclose($file);
+		}
+
+		public function logJSON($text)
+		{
+			$file = fopen($this->pathLog, 'a+');
+			$message = ',' . PHP_EOL . '{' . PHP_EOL . '	"date":"'  . date('T.m.d') . '",' . PHP_EOL . '	"time":"' . date('h:i:s') . '",' . PHP_EOL . '	"context":"' . $text . '"' . PHP_EOL . '}'; 
 			fwrite($file, $message);
 			fclose($file);
 		}

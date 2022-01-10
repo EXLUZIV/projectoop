@@ -21,6 +21,8 @@ class ParentLog implements LogInterface
 	{
 		$log = Log::setPathByClass(__CLASS__);
 		$log->log('Change log class Notice. Context - "' . $value . '"');
+		$log1 = Log::setPathByClassJSON(__CLASS__);
+		$log1->logJSON($value);
 		$this->logNotice = $value;
 	}
 
@@ -35,6 +37,8 @@ class ParentLog implements LogInterface
 	{
 		$log = Log::setPathByClass(__CLASS__);
 		$log->log('Change log class Warning. Context -  "' . $value . '"');
+		$log1 = Log::setPathByClassJSON(__CLASS__);
+		$log1->logJSON($value);
 		$this->logWarning = $value;
 	}
 
@@ -49,6 +53,8 @@ class ParentLog implements LogInterface
 	{
 		$log = Log::setPathByClass(__CLASS__);
 		$log->log('Change log class Dangerous. Context -  "' . $value . '"');
+		$log1 = Log::setPathByClassJSON(__CLASS__);
+		$log1->logJSON($value);
 		$this->logDangerous = $value;
 	}
 
