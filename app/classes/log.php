@@ -2,87 +2,72 @@
 
 namespace app\logs;
 
-class Log 
+require '../app/interface/LogInterface.php';
+
+use interfaces\LogInterface;
+
+class Log implements LogInterface
 {
 
-		const NEW_LOG_MESSAGE = '---NEW LOG---';
-		private static $rootPathDir;
-		private $pathLog;
-		
-		public function __construct($path_value)
-		{
-			if(empty(self::$rootPathDir)){
-				throw new \Exception('Must set root log dir');
-			}
+	const NEW_LOG_MESSAGE = '---NEW LOG---';
+	private static $rootPathDir;
+	private $pathLog;
 
-			$path = $this->getValidPath($path_value);
-			$this->pathLog = self::$rootPathDir . '/' . $path;
+	public function __construct(string $path_value)
+	{
+		if (empty(self::$rootPathDir)) {
+			throw new \Exception('Must set root log dir');
+		}
 
-			if(!file_exists($this->pathLog))	{
+		$path = $this->getValidPath($path_value);
+		$this->pathLog = self::$rootPathDir . '/' . $path;
 
-				$arrayPath = explode('/', $path);
+		if (!file_exists($this->pathLog)) {
 
-				$currentPathString = self::$rootPathDir . '/';
-				foreach ($arrayPath as $key => $value){
-					$currentPathString .= $value . '/';
-					if(file_exists($currentPathString)){
-						continue;
-					}
-					if($key == count($arrayPath) - 1){
-						continue;
-					}
+			$arrayPath = explode('/', $path);
 
-					mkdir($currentPathString);
+			$currentPathString = self::$rootPathDir . '/';
+			foreach ($arrayPath as $key => $value) {
+				$currentPathString .= $value . '/';
+				if (file_exists($currentPathString)) {
+					continue;
 				}
+				if ($key == count($arrayPath) - 1) {
+					continue;
+				}
+
+				mkdir($currentPathString);
 			}
 		}
+	}
 
-		public static function setPathByClass($path_class)
-		{
-			return new Log($path_class . '.log');
-		}
+	public static function setPathByClass(string $path_class)
+	{
+		return new Log($path_class . '.log');
+	}
 
-		public static function setPathByMethod($path_method)
-		{
-			$path_method = str_replace('::', '/' , $path_method);
-			return new Log($path_method . '.log');
-		}
+	public static function setPathByMethod(string $path_method)
+	{
+		$path_method = str_replace('::', '/', $path_method);
+		return new Log($path_method . '.log');
+	}
 
-		public static function setPathByClassJSON($path_class)
-		{
-			return new Log($path_class . '.json');
-		}
+	public function setLog(string $type, string $text)
+	{
+		$file = fopen($this->pathLog, 'a+');
+		$message = self::NEW_LOG_MESSAGE . PHP_EOL . date('Y.m.d h:i:s') . PHP_EOL . $type . '. ' . $text . PHP_EOL . PHP_EOL;
+		fwrite($file, $message);
+		fclose($file);
+	}
 
-		public static function setPathByMethodJSON($path_method)
-		{
-			$path_method = str_replace('::', '/' , $path_method);
-			return new Log($path_method . '.json');
-		}
+	public static function setRootLogDir(string $root_path)
+	{
+		self::$rootPathDir = $root_path;
+	}
 
-		public function log($text)
-		{
-			$file = fopen($this->pathLog, 'a+');
-			$message = self::NEW_LOG_MESSAGE . PHP_EOL . date('Y.m.d h:i:s') . PHP_EOL . $text . PHP_EOL . PHP_EOL;
-			fwrite($file, $message);
-			fclose($file);
-		}
-
-		public function logJSON($text)
-		{
-			$file = fopen($this->pathLog, 'a+');
-			$message = '{' . PHP_EOL . '	"date":"'  . date('T.m.d') . '",' . PHP_EOL . '	"time":"' . date('h:i:s') . '",' . PHP_EOL . '	"context":"' . $text . '},' . PHP_EOL; 
-			fwrite($file, $message);
-			fclose($file);
-		}
-
-		public static function setRootLogDir($root_path)
-			{
-				self::$rootPathDir = $root_path;
-			}
-
-		public function getValidPath($path_value)
-		{
-			$path = trim(str_replace('\\', '/', $path_value), '/');
-			return $path;
-		}
+	public function getValidPath(string $path_value)
+	{	
+		$path = trim(str_replace('\\', '/', $path_value), '/');
+		return $path;
+	}
 }
