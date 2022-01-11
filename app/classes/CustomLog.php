@@ -2,7 +2,7 @@
 
 namespace app\logs;
 
-require '../app/interface/CustomLogInterface.php';
+require 'app/interface/CustomLogInterface.php';
 
 use interfaces\CustomLogInterface;
 
@@ -12,10 +12,6 @@ class CustomLog extends Log implements CustomLogInterface
 	private $logWarning;
 	private $logDangerous;
 
-	// public function __construct($path_value)
-	// {
-	// 	parent::__construct($path_value);
-	// }
 
 	public function setLogNotice(string $value)
 	{

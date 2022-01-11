@@ -106,3 +106,35 @@ warning. This is warning log
 2022.01.11 05:06:50
 dangerous. This is dangerous log
 
+---NEW LOG---
+2022.01.11 08:57:08
+notice. This is notice log
+
+---NEW LOG---
+2022.01.11 08:57:08
+warning. This is warning log
+
+---NEW LOG---
+2022.01.11 08:57:08
+dangerous. This is dangerous log
+
+---NEW LOG---
+2022.01.11 09:14:28
+notice. This is notice log
+
+---NEW LOG---
+2022.01.11 09:14:28
+warning. This is warning log
+
+---NEW LOG---
+2022.01.11 09:14:28
+dangerous. This is dangerous log
+
+---NEW LOG---
+2022.01.11 09:14:28
+app\logs\Log. log for class
+
+---NEW LOG---
+2022.01.11 09:14:28
+app\logs\Log::setPathByMethod. log for method
+

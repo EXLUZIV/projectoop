@@ -2,7 +2,7 @@
 
 namespace app\logs;
 
-require '../app/interface/LogInterface.php';
+require 'app/interface/LogInterface.php';
 
 use interfaces\LogInterface;
 
@@ -41,15 +41,15 @@ class Log implements LogInterface
 		}
 	}
 
-	public static function setPathByClass(string $path_class)
+	public function setPathByClass(string $text)
 	{
-		return new Log($path_class . '.log');
+		$this->setLog(__CLASS__, $text);
+
 	}
 
-	public static function setPathByMethod(string $path_method)
+	public function setPathByMethod(string $text)
 	{
-		$path_method = str_replace('::', '/', $path_method);
-		return new Log($path_method . '.log');
+		$this->setLog(__METHOD__, $text);
 	}
 
 	public function setLog(string $type, string $text)

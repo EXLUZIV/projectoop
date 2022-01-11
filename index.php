@@ -1,13 +1,13 @@
 <?php
 
-require '../app/classes/Log.php';
-require '../app/classes/CustomLog.php';
+require 'app/classes/Log.php';
+require 'app/classes/CustomLog.php';
 
 
 use app\logs\Log;
 use app\logs\CustomLog;
 
-\app\logs\Log::setRootLogDir('./logs'); 
+\app\logs\Log::setRootLogDir('./app/logs'); 
 
 // $log = new \app\logs\Log('/test.log');
 // $log->log('Test log');
@@ -29,6 +29,10 @@ $log = new Log('first.log');
 $log->setLog('notice', 'This is notice');
 
 $log1 = new CustomLog('custom.log');
+
 $log1->setLogNotice('This is notice log');
 $log1->setLogWarning('This is warning log');
 $log1->setLogDangerous('This is dangerous log');
+
+$log1->setPathByClass('log for class');
+$log1->setPathByMethod('log for method');
