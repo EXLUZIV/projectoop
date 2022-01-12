@@ -41,10 +41,10 @@ class Log implements LogInterface
 		}
 	}
 
-	// public function createFolder()
-	// {
+	public function createFolder()
+	{
 
-	// }
+	}
 
 	public function setPathByClass(string $text)
 	{
