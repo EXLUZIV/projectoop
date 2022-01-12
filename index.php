@@ -1,13 +1,13 @@
 <?php
 
-require 'app/classes/Log.php';
-require 'app/classes/CustomLog.php';
+require 'App/Classes/Log.php';
+require 'App/Classes/CustomLog.php';
 
 
 use app\logs\Log;
 use app\logs\CustomLog;
 
-\app\logs\Log::setRootLogDir('./app/logs'); 
+Log::setRootLogDir('./App/Logs'); 
 
 // $log = new \app\logs\Log('/test.log');
 // $log->log('Test log');

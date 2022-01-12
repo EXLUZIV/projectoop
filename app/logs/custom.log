@@ -138,3 +138,23 @@ app\logs\Log. log for class
 2022.01.11 09:14:28
 app\logs\Log::setPathByMethod. log for method
 
+---NEW LOG---
+2022.01.12 09:54:10
+notice. This is notice log
+
+---NEW LOG---
+2022.01.12 09:54:10
+warning. This is warning log
+
+---NEW LOG---
+2022.01.12 09:54:10
+dangerous. This is dangerous log
+
+---NEW LOG---
+2022.01.12 09:54:10
+app\logs\Log. log for class
+
+---NEW LOG---
+2022.01.12 09:54:10
+app\logs\Log::setPathByMethod. log for method
+

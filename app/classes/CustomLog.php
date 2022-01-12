@@ -2,7 +2,7 @@
 
 namespace app\logs;
 
-require 'app/interface/CustomLogInterface.php';
+require 'App/Interface/CustomLogInterface.php';
 
 use interfaces\CustomLogInterface;
 

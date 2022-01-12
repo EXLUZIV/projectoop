@@ -2,7 +2,7 @@
 
 namespace app\logs;
 
-require 'app/interface/LogInterface.php';
+require 'App/Interface/LogInterface.php';
 
 use interfaces\LogInterface;
 
@@ -40,6 +40,11 @@ class Log implements LogInterface
 			}
 		}
 	}
+
+	// public function createFolder()
+	// {
+
+	// }
 
 	public function setPathByClass(string $text)
 	{
