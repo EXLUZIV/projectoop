@@ -4,7 +4,7 @@ namespace app\logs;
 
 class CustomLog extends Log
 {
-	private $logNotice;
+	private string $logNotice;
 	private $logWarning;
 	private $logDangerous;
 
