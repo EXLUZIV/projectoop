@@ -19,7 +19,7 @@ class Log implements LogInterface
 		$this->pathLog = self::$rootPathDir . '/' . $path;
 	}
 
-	public static function createFolder(string $path, string $pathLog)
+	public function createFolder(string $path, string $pathLog): void
 	{
 		if (empty(self::$rootPathDir)) {
 			throw new \Exception('Must set root log dir');
@@ -44,18 +44,18 @@ class Log implements LogInterface
 		}
 	}
 
-	public function setPathByClass(string $text)
+	public function setPathByClass(string $text): void
 	{
 		$this->setLog(__CLASS__, $text);
 
 	}
 
-	public function setPathByMethod(string $text)
+	public function setPathByMethod(string $text): void
 	{
 		$this->setLog(__METHOD__, $text);
 	}
 
-	public function setLog(string $type, string $text)
+	public function setLog(string $type, string $text): void
 	{
 		$file = fopen($this->pathLog, 'a+');
 		$message = self::NEW_LOG_MESSAGE . PHP_EOL . date('Y.m.d h:i:s') . PHP_EOL . $type . '. ' . $text . PHP_EOL . PHP_EOL;
@@ -63,12 +63,12 @@ class Log implements LogInterface
 		fclose($file);
 	}
 
-	public static function setRootLogDir(string $root_path)
+	public static function setRootLogDir(string $root_path): void
 	{
 		self::$rootPathDir = $root_path;
 	}
 
-	public function getValidPath(string $path_value)
+	public function getValidPath(string $path_value): string
 	{	
 		$path = trim(str_replace('\\', '/', $path_value), '/');
 		return $path;

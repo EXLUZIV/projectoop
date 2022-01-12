@@ -478,3 +478,127 @@ app\logs\Log. log for class
 2022.01.12 12:03:05
 app\logs\Log::setPathByMethod. log for method
 
+---NEW LOG---
+2022.01.12 03:10:30
+notice. This is notice log
+
+---NEW LOG---
+2022.01.12 03:10:30
+warning. This is warning log
+
+---NEW LOG---
+2022.01.12 03:10:30
+dangerous. This is dangerous log
+
+---NEW LOG---
+2022.01.12 03:10:30
+app\logs\Log. log for class
+
+---NEW LOG---
+2022.01.12 03:10:30
+app\logs\Log::setPathByMethod. log for method
+
+---NEW LOG---
+2022.01.12 03:10:34
+notice. This is notice log
+
+---NEW LOG---
+2022.01.12 03:10:34
+warning. This is warning log
+
+---NEW LOG---
+2022.01.12 03:10:34
+dangerous. This is dangerous log
+
+---NEW LOG---
+2022.01.12 03:10:34
+app\logs\Log. log for class
+
+---NEW LOG---
+2022.01.12 03:10:34
+app\logs\Log::setPathByMethod. log for method
+
+---NEW LOG---
+2022.01.12 03:10:35
+notice. This is notice log
+
+---NEW LOG---
+2022.01.12 03:10:35
+warning. This is warning log
+
+---NEW LOG---
+2022.01.12 03:10:35
+dangerous. This is dangerous log
+
+---NEW LOG---
+2022.01.12 03:10:35
+app\logs\Log. log for class
+
+---NEW LOG---
+2022.01.12 03:10:35
+app\logs\Log::setPathByMethod. log for method
+
+---NEW LOG---
+2022.01.12 03:10:45
+notice. This is notice log
+
+---NEW LOG---
+2022.01.12 03:10:45
+warning. This is warning log
+
+---NEW LOG---
+2022.01.12 03:10:45
+dangerous. This is dangerous log
+
+---NEW LOG---
+2022.01.12 03:10:45
+app\logs\Log. log for class
+
+---NEW LOG---
+2022.01.12 03:10:45
+app\logs\Log::setPathByMethod. log for method
+
+---NEW LOG---
+2022.01.12 06:38:11
+notice. This is notice log
+
+---NEW LOG---
+2022.01.12 06:38:11
+warning. This is warning log
+
+---NEW LOG---
+2022.01.12 06:38:11
+dangerous. This is dangerous log
+
+---NEW LOG---
+2022.01.12 06:38:20
+notice. This is notice log
+
+---NEW LOG---
+2022.01.12 06:38:20
+warning. This is warning log
+
+---NEW LOG---
+2022.01.12 06:38:20
+dangerous. This is dangerous log
+
+---NEW LOG---
+2022.01.12 06:49:09
+notice. This is notice log
+
+---NEW LOG---
+2022.01.12 06:49:09
+warning. This is warning log
+
+---NEW LOG---
+2022.01.12 06:49:09
+dangerous. This is dangerous log
+
+---NEW LOG---
+2022.01.12 06:49:09
+app\logs\Log. log for class
+
+---NEW LOG---
+2022.01.12 06:49:09
+app\logs\Log::setPathByMethod. log for method
+

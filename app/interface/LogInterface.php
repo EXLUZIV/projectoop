@@ -4,9 +4,9 @@ namespace interfaces;
 
 interface LogInterface
 {
-	public function setLog(string $type, string $text);
-	public static function setRootLogDir(string $root_path);
-	public function getValidPath(string $path_value);
-	public function setPathByClass(string $text);
-	public function setPathByMethod(string $text);
+	public function setLog(string $type, string $text): void;
+	public static function setRootLogDir(string $root_path): void;
+	public function getValidPath(string $path_value): string;
+	public function setPathByClass(string $text): void;
+	public function setPathByMethod(string $text): void;
 }
