@@ -2,11 +2,7 @@
 
 namespace app\logs;
 
-require 'App/Interface/CustomLogInterface.php';
-
-use interfaces\CustomLogInterface;
-
-class CustomLog extends Log implements CustomLogInterface
+class CustomLog extends Log
 {
 	private $logNotice;
 	private $logWarning;

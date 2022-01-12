@@ -15,14 +15,17 @@ class Log implements LogInterface
 
 	public function __construct(string $path_value)
 	{
+		$path = $this->getValidPath($path_value);
+		$this->pathLog = self::$rootPathDir . '/' . $path;
+	}
+
+	public static function createFolder(string $path, string $pathLog)
+	{
 		if (empty(self::$rootPathDir)) {
 			throw new \Exception('Must set root log dir');
 		}
 
-		$path = $this->getValidPath($path_value);
-		$this->pathLog = self::$rootPathDir . '/' . $path;
-
-		if (!file_exists($this->pathLog)) {
+		if (!file_exists($pathLog)) {
 
 			$arrayPath = explode('/', $path);
 
@@ -39,11 +42,6 @@ class Log implements LogInterface
 				mkdir($currentPathString);
 			}
 		}
-	}
-
-	public function createFolder()
-	{
-
 	}
 
 	public function setPathByClass(string $text)

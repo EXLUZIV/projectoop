@@ -36,3 +36,9 @@ $log1->setLogDangerous('This is dangerous log');
 
 $log1->setPathByClass('log for class');
 $log1->setPathByMethod('log for method');
+
+$log2 = new Log('New log.log');
+$log2->setLog('notice', 'new log');
+
+$log3 = new Log('second log.log');
+$log3->setLog('second', 'sss');
