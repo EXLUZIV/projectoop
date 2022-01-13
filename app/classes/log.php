@@ -10,8 +10,8 @@ class Log implements LogInterface
 {
 
 	const NEW_LOG_MESSAGE = '---NEW LOG---';
-	private static $rootPathDir;
-	private $pathLog;
+	private static string $rootPathDir;
+	private string $pathLog;
 
 	public function __construct(string $path_value)
 	{

@@ -5,8 +5,8 @@ namespace app\logs;
 class CustomLog extends Log
 {
 	private string $logNotice;
-	private $logWarning;
-	private $logDangerous;
+	private string $logWarning;
+	private string $logDangerous;
 
 
 	public function setLogNotice(string $value): void

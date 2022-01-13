@@ -602,3 +602,43 @@ app\logs\Log. log for class
 2022.01.12 06:49:09
 app\logs\Log::setPathByMethod. log for method
 
+---NEW LOG---
+2022.01.13 11:29:47
+notice. This is notice log
+
+---NEW LOG---
+2022.01.13 11:29:47
+warning. This is warning log
+
+---NEW LOG---
+2022.01.13 11:29:47
+dangerous. This is dangerous log
+
+---NEW LOG---
+2022.01.13 11:29:47
+app\logs\Log. log for class
+
+---NEW LOG---
+2022.01.13 11:29:47
+app\logs\Log::setPathByMethod. log for method
+
+---NEW LOG---
+2022.01.13 11:29:49
+notice. This is notice log
+
+---NEW LOG---
+2022.01.13 11:29:49
+warning. This is warning log
+
+---NEW LOG---
+2022.01.13 11:29:49
+dangerous. This is dangerous log
+
+---NEW LOG---
+2022.01.13 11:29:49
+app\logs\Log. log for class
+
+---NEW LOG---
+2022.01.13 11:29:49
+app\logs\Log::setPathByMethod. log for method
+
